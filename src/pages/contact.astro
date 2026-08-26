@@ -19,21 +19,17 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       </div>
 
       <div class="grid lg:grid-cols-5 gap-12">
-        <!-- Form -->
         <div class="lg:col-span-3">
+          <!--
+            Form works with Formspree (free tier).
+            Create an account at formspree.io and replace the action URL with your form endpoint.
+            Example: action="https://formspree.io/f/your-id"
+          -->
           <form 
-            name="contact" 
-            method="POST" 
-            data-netlify="true"
-            netlify-honeypot="bot-field"
+            action="https://formspree.io/f/xpwzgkqr"
+            method="POST"
             class="card space-y-6"
-            action="/contact"
           >
-            <input type="hidden" name="form-name" value="contact" />
-            <p class="hidden">
-              <label>Don’t fill this out: <input name="bot-field" /></label>
-            </p>
-
             <div class="grid sm:grid-cols-2 gap-6">
               <div>
                 <label for="name" class="block text-sm font-medium text-slate-300 mb-2">Name</label>
@@ -42,7 +38,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                   id="name" 
                   name="name" 
                   required
-                  class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-700 text-slate-100 placeholder-slate-500 focus:outline-none focus:border-cyan-500 transition"
+                  class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-700 text-slate-100 placeholder-slate-500 focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500/50 transition"
                   placeholder="Your name"
                 />
               </div>
@@ -53,7 +49,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                   id="email" 
                   name="email" 
                   required
-                  class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-700 text-slate-100 placeholder-slate-500 focus:outline-none focus:border-cyan-500 transition"
+                  class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-700 text-slate-100 placeholder-slate-500 focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500/50 transition"
                   placeholder="you@example.com"
                 />
               </div>
@@ -65,7 +61,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                 type="text" 
                 id="organization" 
                 name="organization"
-                class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-700 text-slate-100 placeholder-slate-500 focus:outline-none focus:border-cyan-500 transition"
+                class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-700 text-slate-100 placeholder-slate-500 focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500/50 transition"
                 placeholder="Company, city, nonprofit..."
               />
             </div>
@@ -75,7 +71,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
               <select 
                 id="interest" 
                 name="interest"
-                class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-700 text-slate-100 focus:outline-none focus:border-cyan-500 transition"
+                class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-700 text-slate-100 focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500/50 transition"
               >
                 <option value="spatial">Spatial Intelligence / Web GIS</option>
                 <option value="pod">Print & POD Platform</option>
@@ -92,7 +88,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                 name="message" 
                 rows="5" 
                 required
-                class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-700 text-slate-100 placeholder-slate-500 focus:outline-none focus:border-cyan-500 transition resize-y"
+                class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-700 text-slate-100 placeholder-slate-500 focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500/50 transition resize-y"
                 placeholder="Tell me a bit about what you’re working on or looking for..."
               ></textarea>
             </div>
@@ -101,10 +97,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
               Send Message
             </button>
           </form>
+          <p class="text-xs text-slate-500 mt-4">
+            Prefer email? Write directly to <a href="mailto:hello@spatialytics.space" class="text-cyan-400 hover:underline">hello@spatialytics.space</a>
+          </p>
         </div>
 
-        <!-- Sidebar info -->
-        <div class="lg:col-span-2 space-y-8">
+        <div class="lg:col-span-2 space-y-6">
           <div class="card">
             <h3 class="font-semibold mb-4">Based in</h3>
             <p class="text-slate-300 text-sm leading-relaxed">
@@ -123,13 +121,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           </div>
 
           <div class="card border-cyan-500/20">
-            <h3 class="font-semibold mb-3">Prefer email?</h3>
-            <p class="text-slate-400 text-sm mb-3">
-              You can also reach out directly.
-            </p>
-            <a href="mailto:hello@spatialytics.space" class="text-cyan-400 text-sm font-medium hover:underline">
-              hello@spatialytics.space
-            </a>
+            <h3 class="font-semibold mb-3">Looking for something specific?</h3>
+            <ul class="space-y-2 text-sm">
+              <li><a href="/solutions/spatial" class="text-cyan-400 hover:underline">Spatial Intelligence</a></li>
+              <li><a href="/solutions/print-pod" class="text-cyan-400 hover:underline">Print & POD Platform</a></li>
+              <li><a href="/solutions/business" class="text-cyan-400 hover:underline">Business Efficiency Apps</a></li>
+            </ul>
           </div>
         </div>
       </div>
