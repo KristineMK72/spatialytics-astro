@@ -35,9 +35,9 @@ const navLinks = [
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   </head>
   <body class="min-h-screen bg-slate-950 text-slate-100 bg-topo">
-    <header class="fixed top-0 inset-x-0 z-50 border-b border-slate-800/60 bg-slate-950/80 backdrop-blur-md" transition:persist>
-      <div class="container-narrow flex items-center justify-between h-16">
-        <a href="/" class="flex items-center gap-2 font-bold text-lg tracking-tight z-50">
+    <header class="fixed top-0 inset-x-0 z-50 border-b border-slate-800/60 bg-slate-950/80 backdrop-blur-md">
+      <div class="container-narrow flex items-center justify-between h-16 relative">
+        <a href="/" class="flex items-center gap-2 font-bold text-lg tracking-tight relative z-50">
           <span class="w-8 h-8 rounded-lg bg-gradient-to-br from-cyan-400 to-cyan-600 flex items-center justify-center text-slate-950 text-sm font-black">S</span>
           <span>Spatialytics</span>
         </a>
@@ -50,43 +50,44 @@ const navLinks = [
           <a href="/contact" class="btn-primary text-sm !px-4 !py-2">Start a Project</a>
         </nav>
 
-        <!-- Mobile menu button -->
-        <button 
-          id="mobile-menu-btn"
-          class="md:hidden z-50 p-2 text-slate-300 hover:text-white transition"
+        <!-- Mobile: checkbox toggle (works without JS) -->
+        <input type="checkbox" id="nav-toggle" class="peer sr-only" />
+        <label 
+          for="nav-toggle" 
+          class="md:hidden relative z-50 p-2 text-slate-300 hover:text-white cursor-pointer select-none"
           aria-label="Toggle menu"
-          aria-expanded="false"
         >
-          <svg id="menu-icon-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg class="w-6 h-6 open-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
           </svg>
-          <svg id="menu-icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg class="w-6 h-6 close-icon hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
           </svg>
-        </button>
-      </div>
+        </label>
 
-      <!-- Mobile menu panel -->
-      <div 
-        id="mobile-menu" 
-        class="md:hidden fixed inset-0 top-16 bg-slate-950/95 backdrop-blur-lg border-t border-slate-800 translate-x-full transition-transform duration-300 ease-out"
-      >
-        <nav class="container-narrow py-8 flex flex-col gap-1">
-          {navLinks.map(link => (
+        <!-- Mobile menu panel -->
+        <div 
+          class="mobile-panel md:hidden fixed inset-x-0 top-16 bottom-0 z-40 bg-slate-950/98 backdrop-blur-lg border-t border-slate-800 
+                 opacity-0 pointer-events-none transition-opacity duration-200
+                 peer-checked:opacity-100 peer-checked:pointer-events-auto"
+        >
+          <nav class="container-narrow py-8 flex flex-col gap-1">
+            {navLinks.map(link => (
+              <a 
+                href={link.href} 
+                class="mobile-link px-4 py-3 text-lg font-medium text-slate-200 hover:text-cyan-400 hover:bg-slate-900/50 rounded-xl transition"
+              >
+                {link.label}
+              </a>
+            ))}
             <a 
-              href={link.href} 
-              class="mobile-nav-link px-4 py-3 text-lg font-medium text-slate-200 hover:text-cyan-400 hover:bg-slate-900/50 rounded-xl transition"
+              href="/contact" 
+              class="mobile-link mt-4 btn-primary text-center"
             >
-              {link.label}
+              Start a Project
             </a>
-          ))}
-          <a 
-            href="/contact" 
-            class="mt-4 btn-primary text-center"
-          >
-            Start a Project
-          </a>
-        </nav>
+          </nav>
+        </div>
       </div>
     </header>
 
@@ -130,43 +131,19 @@ const navLinks = [
       </div>
     </footer>
 
-    <script>
-      function initMobileMenu() {
-        const btn = document.getElementById('mobile-menu-btn');
-        const menu = document.getElementById('mobile-menu');
-        const iconOpen = document.getElementById('menu-icon-open');
-        const iconClose = document.getElementById('menu-icon-close');
-        if (!btn || !menu || !iconOpen || !iconClose) return;
+    <style>
+      #nav-toggle:checked ~ label .open-icon { display: none; }
+      #nav-toggle:checked ~ label .close-icon { display: block !important; }
+    </style>
 
-        const closeMenu = () => {
-          menu.classList.add('translate-x-full');
-          iconOpen.classList.remove('hidden');
-          iconClose.classList.add('hidden');
-          btn.setAttribute('aria-expanded', 'false');
-          document.body.style.overflow = '';
-        };
-
-        const openMenu = () => {
-          menu.classList.remove('translate-x-full');
-          iconOpen.classList.add('hidden');
-          iconClose.classList.remove('hidden');
-          btn.setAttribute('aria-expanded', 'true');
-          document.body.style.overflow = 'hidden';
-        };
-
-        btn.addEventListener('click', () => {
-          const isOpen = btn.getAttribute('aria-expanded') === 'true';
-          if (isOpen) closeMenu();
-          else openMenu();
-        });
-
-        menu.querySelectorAll('.mobile-nav-link, a.btn-primary').forEach(link => {
-          link.addEventListener('click', closeMenu);
-        });
-      }
-
-      initMobileMenu();
-      document.addEventListener('astro:page-load', initMobileMenu);
+    <script is:inline>
+      document.addEventListener('click', function (e) {
+        const link = e.target.closest && e.target.closest('.mobile-link');
+        if (link) {
+          const toggle = document.getElementById('nav-toggle');
+          if (toggle) toggle.checked = false;
+        }
+      });
     </script>
   </body>
 </html>
