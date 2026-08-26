@@ -1,0 +1,63 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout 
+  title="Spatial Intelligence — Spatialytics"
+  description="Web GIS, interactive maps, 3D explorers, and location intelligence platforms for Greater Minnesota partners."
+>
+  <section class="section">
+    <div class="container-narrow">
+      <div class="max-w-3xl mb-12">
+        <a href="/solutions" class="text-cyan-400 text-sm font-medium hover:underline mb-4 inline-block">← All Solutions</a>
+        <p class="text-cyan-400 font-medium mb-3 text-sm uppercase tracking-wide">Spatial Intelligence</p>
+        <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+          Maps and data that people actually use
+        </h1>
+        <p class="text-lg text-slate-300 leading-relaxed">
+          Most spatial tools are built for specialists. We build platforms that make location intelligence usable for tourism boards, city staff, natural resource partners, and the public — without requiring a GIS degree.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8 mb-16">
+        <div class="card">
+          <h3 class="text-xl font-semibold mb-3">What we deliver</h3>
+          <ul class="space-y-3 text-slate-300 text-sm">
+            <li class="flex gap-3"><span class="text-cyan-400">•</span> Interactive web maps and story maps</li>
+            <li class="flex gap-3"><span class="text-cyan-400">•</span> 3D terrain and habitat explorers (MapLibre + WebGL)</li>
+            <li class="flex gap-3"><span class="text-cyan-400">•</span> Operational dashboards for staff</li>
+            <li class="flex gap-3"><span class="text-cyan-400">•</span> Public-facing data explorers</li>
+            <li class="flex gap-3"><span class="text-cyan-400">•</span> Integration with existing GIS data and services</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3 class="text-xl font-semibold mb-3">Who it’s for</h3>
+          <ul class="space-y-3 text-slate-300 text-sm">
+            <li class="flex gap-3"><span class="text-cyan-400">•</span> Tourism and destination marketing organizations</li>
+            <li class="flex gap-3"><span class="text-cyan-400">•</span> Cities, counties, and economic development groups</li>
+            <li class="flex gap-3"><span class="text-cyan-400">•</span> Natural resources and conservation partners</li>
+            <li class="flex gap-3"><span class="text-cyan-400">•</span> Advocacy and community organizations</li>
+            <li class="flex gap-3"><span class="text-cyan-400">•</span> Any team that needs spatial data to tell a clearer story</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card border-cyan-500/20 mb-12">
+        <h3 class="text-xl font-semibold mb-4">Featured example</h3>
+        <div class="flex flex-col md:flex-row gap-8 items-start">
+          <div class="flex-1">
+            <h4 class="font-medium text-lg mb-2">3D Bear Habitat Explorer</h4>
+            <p class="text-slate-400 text-sm leading-relaxed mb-4">
+              A live WebGL experience that lets users explore terrain and habitat overlays. Built to make complex spatial analysis accessible and engaging.
+            </p>
+            <a href="https://bear-habitat-3d.vercel.app" target="_blank" rel="noopener" class="btn-primary text-sm">Open Live Demo →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center">
+        <a href="/contact" class="btn-primary">Start a spatial project</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

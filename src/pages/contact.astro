@@ -1,0 +1,138 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout 
+  title="Contact — Spatialytics"
+  description="Start a conversation about spatial platforms, POD systems, or business efficiency tools for Greater Minnesota."
+>
+  <section class="section">
+    <div class="container-narrow">
+      <div class="max-w-3xl mb-16">
+        <p class="text-cyan-400 font-medium mb-3 text-sm uppercase tracking-wide">Contact</p>
+        <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+          Let’s build something that stays local
+        </h1>
+        <p class="text-lg text-slate-300 leading-relaxed">
+          Whether you need a spatial platform, a POD system for a print shop, a custom efficiency app, or just want to explore what’s possible — reach out. Based in the Brainerd Lakes area and working across Greater Minnesota.
+        </p>
+      </div>
+
+      <div class="grid lg:grid-cols-5 gap-12">
+        <!-- Form -->
+        <div class="lg:col-span-3">
+          <form 
+            name="contact" 
+            method="POST" 
+            data-netlify="true"
+            netlify-honeypot="bot-field"
+            class="card space-y-6"
+            action="/contact"
+          >
+            <input type="hidden" name="form-name" value="contact" />
+            <p class="hidden">
+              <label>Don’t fill this out: <input name="bot-field" /></label>
+            </p>
+
+            <div class="grid sm:grid-cols-2 gap-6">
+              <div>
+                <label for="name" class="block text-sm font-medium text-slate-300 mb-2">Name</label>
+                <input 
+                  type="text" 
+                  id="name" 
+                  name="name" 
+                  required
+                  class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-700 text-slate-100 placeholder-slate-500 focus:outline-none focus:border-cyan-500 transition"
+                  placeholder="Your name"
+                />
+              </div>
+              <div>
+                <label for="email" class="block text-sm font-medium text-slate-300 mb-2">Email</label>
+                <input 
+                  type="email" 
+                  id="email" 
+                  name="email" 
+                  required
+                  class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-700 text-slate-100 placeholder-slate-500 focus:outline-none focus:border-cyan-500 transition"
+                  placeholder="you@example.com"
+                />
+              </div>
+            </div>
+
+            <div>
+              <label for="organization" class="block text-sm font-medium text-slate-300 mb-2">Organization (optional)</label>
+              <input 
+                type="text" 
+                id="organization" 
+                name="organization"
+                class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-700 text-slate-100 placeholder-slate-500 focus:outline-none focus:border-cyan-500 transition"
+                placeholder="Company, city, nonprofit..."
+              />
+            </div>
+
+            <div>
+              <label for="interest" class="block text-sm font-medium text-slate-300 mb-2">I’m interested in</label>
+              <select 
+                id="interest" 
+                name="interest"
+                class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-700 text-slate-100 focus:outline-none focus:border-cyan-500 transition"
+              >
+                <option value="spatial">Spatial Intelligence / Web GIS</option>
+                <option value="pod">Print & POD Platform</option>
+                <option value="business">Business Efficiency App</option>
+                <option value="general">General inquiry / partnership</option>
+                <option value="other">Something else</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="message" class="block text-sm font-medium text-slate-300 mb-2">Message</label>
+              <textarea 
+                id="message" 
+                name="message" 
+                rows="5" 
+                required
+                class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-700 text-slate-100 placeholder-slate-500 focus:outline-none focus:border-cyan-500 transition resize-y"
+                placeholder="Tell me a bit about what you’re working on or looking for..."
+              ></textarea>
+            </div>
+
+            <button type="submit" class="btn-primary w-full sm:w-auto">
+              Send Message
+            </button>
+          </form>
+        </div>
+
+        <!-- Sidebar info -->
+        <div class="lg:col-span-2 space-y-8">
+          <div class="card">
+            <h3 class="font-semibold mb-4">Based in</h3>
+            <p class="text-slate-300 text-sm leading-relaxed">
+              Brainerd Lakes Area<br />
+              Crow Wing County, Minnesota
+            </p>
+          </div>
+
+          <div class="card">
+            <h3 class="font-semibold mb-4">What to expect</h3>
+            <ul class="space-y-3 text-sm text-slate-300">
+              <li class="flex gap-2"><span class="text-cyan-400">→</span> A real reply (usually within a couple of business days)</li>
+              <li class="flex gap-2"><span class="text-cyan-400">→</span> Clear next steps if there’s a fit</li>
+              <li class="flex gap-2"><span class="text-cyan-400">→</span> No pressure sales process</li>
+            </ul>
+          </div>
+
+          <div class="card border-cyan-500/20">
+            <h3 class="font-semibold mb-3">Prefer email?</h3>
+            <p class="text-slate-400 text-sm mb-3">
+              You can also reach out directly.
+            </p>
+            <a href="mailto:hello@spatialytics.space" class="text-cyan-400 text-sm font-medium hover:underline">
+              hello@spatialytics.space
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
