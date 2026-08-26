@@ -1,0 +1,123 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout>
+  <!-- Hero -->
+  <section class="relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-b from-cyan-500/5 via-transparent to-transparent pointer-events-none"></div>
+    <div class="container-narrow section relative">
+      <div class="max-w-3xl">
+        <p class="text-cyan-400 font-medium mb-4 tracking-wide text-sm uppercase">Spatialytics · Greater Minnesota</p>
+        <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight tracking-tight mb-6">
+          Precision tools for <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-amber-400">place, people, and progress</span>
+        </h1>
+        <p class="text-lg md:text-xl text-slate-300 mb-10 max-w-2xl leading-relaxed">
+          We build spatial intelligence platforms, print-on-demand systems, and business efficiency apps that keep high-value software jobs and economic value in the Brainerd Lakes area and Greater Minnesota.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <a href="/work" class="btn-primary">Explore the Work</a>
+          <a href="/compare" class="btn-secondary">See Regional Advantage</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Three Pillars -->
+  <section class="section border-t border-slate-800/60">
+    <div class="container-narrow">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">Three ways we create value</h2>
+        <p class="text-slate-400 max-w-2xl mx-auto">GIS expertise + modern web products + local economic impact.</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-6">
+        <a href="/solutions/spatial" class="card group">
+          <div class="w-12 h-12 rounded-xl bg-cyan-500/10 flex items-center justify-center mb-5 text-cyan-400 text-xl">🗺️</div>
+          <h3 class="text-xl font-semibold mb-2 group-hover:text-cyan-400 transition">Spatial Intelligence</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">
+            Web GIS, interactive maps, 3D explorers, and location intelligence for tourism, municipal, natural resources, and advocacy partners.
+          </p>
+        </a>
+        <a href="/solutions/print-pod" class="card group">
+          <div class="w-12 h-12 rounded-xl bg-amber-500/10 flex items-center justify-center mb-5 text-amber-400 text-xl">🖨️</div>
+          <h3 class="text-xl font-semibold mb-2 group-hover:text-cyan-400 transition">Print & POD Platform</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">
+            SaaS tools that help local print shops offer modern print-on-demand services, reduce overhead, and compete with larger platforms.
+          </p>
+        </a>
+        <a href="/solutions/business" class="card group">
+          <div class="w-12 h-12 rounded-xl bg-cyan-500/10 flex items-center justify-center mb-5 text-cyan-400 text-xl">⚡</div>
+          <h3 class="text-xl font-semibold mb-2 group-hover:text-cyan-400 transition">Business Efficiency Apps</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">
+            Custom web applications for Greater Minnesota businesses that cut administrative costs and support better wages through smarter operations.
+          </p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Demo -->
+  <section class="section border-t border-slate-800/60 bg-slate-900/30">
+    <div class="container-narrow">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
+        <div>
+          <p class="text-cyan-400 text-sm font-medium mb-2">Featured Interactive</p>
+          <h2 class="text-3xl font-bold">3D Bear Habitat Explorer</h2>
+        </div>
+        <a href="https://bear-habitat-3d.vercel.app" target="_blank" rel="noopener" class="btn-secondary text-sm">
+          Open Live Demo →
+        </a>
+      </div>
+      <div class="rounded-2xl overflow-hidden border border-slate-800 bg-slate-900 aspect-video flex items-center justify-center">
+        <div class="text-center p-8">
+          <p class="text-slate-400 mb-4">Live WebGL terrain + habitat overlays (MapLibre)</p>
+          <a href="https://bear-habitat-3d.vercel.app" target="_blank" class="btn-primary">Launch Explorer</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Impact Teaser -->
+  <section class="section border-t border-slate-800/60">
+    <div class="container-narrow">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <h2 class="text-3xl md:text-4xl font-bold mb-6">Why Greater Minnesota needs this</h2>
+          <p class="text-slate-300 mb-6 leading-relaxed">
+            The Brainerd Lakes area has a clear industry gap in software product development and spatial analytics companies. High-wage tech roles are underrepresented. Spatialytics exists to close that gap — creating year-round, high-value jobs while giving local businesses modern tools.
+          </p>
+          <a href="/compare" class="btn-primary">View Regional Comparison</a>
+        </div>
+        <div class="grid grid-cols-2 gap-4">
+          <div class="card text-center">
+            <div class="text-3xl font-bold text-cyan-400 mb-1">~1.1%</div>
+            <div class="text-xs text-slate-400">Computer & Math occupations in Northwest MN</div>
+          </div>
+          <div class="card text-center">
+            <div class="text-3xl font-bold text-cyan-400 mb-1">~3.5%</div>
+            <div class="text-xs text-slate-400">Statewide average</div>
+          </div>
+          <div class="card text-center">
+            <div class="text-3xl font-bold text-amber-400 mb-1">Lower</div>
+            <div class="text-xs text-slate-400">Cost of living vs Metro</div>
+          </div>
+          <div class="card text-center">
+            <div class="text-3xl font-bold text-amber-400 mb-1">High</div>
+            <div class="text-xs text-slate-400">Talent retention opportunity</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section border-t border-slate-800/60">
+    <div class="container-narrow text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to build something that stays local?</h2>
+      <p class="text-slate-400 max-w-xl mx-auto mb-10">
+        Whether you need a spatial platform, a POD system for your print shop, or a custom efficiency app — let’s talk.
+      </p>
+      <a href="/contact" class="btn-primary text-lg">Start a Conversation</a>
+    </div>
+  </section>
+</BaseLayout>

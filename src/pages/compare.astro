@@ -1,0 +1,193 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout 
+  title="Regional Comparison — Wages, Costs & Industry Gap | Spatialytics"
+  description="How Brainerd Lakes, Greater Minnesota, and the Twin Cities compare on wages, cost of living, and software/GIS industry presence."
+>
+  <section class="section">
+    <div class="container-narrow">
+      <div class="max-w-3xl mb-16">
+        <p class="text-cyan-400 font-medium mb-3 text-sm uppercase tracking-wide">Regional Intelligence</p>
+        <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+          Wages, costs, and the software industry gap
+        </h1>
+        <p class="text-lg text-slate-300 leading-relaxed">
+          Greater Minnesota — and the Brainerd Lakes area specifically — offers a real cost advantage for businesses and workers. At the same time, it has a thinner presence of the software, GIS product, and digital-platform companies that Spatialytics builds. That combination is both a challenge and an opportunity.
+        </p>
+      </div>
+
+      <!-- Snapshot Cards -->
+      <div class="grid md:grid-cols-3 gap-6 mb-20">
+        <div class="card">
+          <h3 class="text-sm font-medium text-cyan-400 mb-3">Brainerd Lakes / Crow Wing</h3>
+          <ul class="space-y-3 text-sm">
+            <li class="flex justify-between"><span class="text-slate-400">Median hourly wage</span><span class="font-medium">~$22–24</span></li>
+            <li class="flex justify-between"><span class="text-slate-400">Family COL (2+1)</span><span class="font-medium">~$62–72k</span></li>
+            <li class="flex justify-between"><span class="text-slate-400">Computer & Math share</span><span class="font-medium text-amber-400">Low (~1.1% region)</span></li>
+            <li class="flex justify-between"><span class="text-slate-400">Housing cost</span><span class="font-medium text-cyan-400">Advantage</span></li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3 class="text-sm font-medium text-cyan-400 mb-3">Greater Minnesota (avg)</h3>
+          <ul class="space-y-3 text-sm">
+            <li class="flex justify-between"><span class="text-slate-400">Median hourly wage</span><span class="font-medium">~$23–24</span></li>
+            <li class="flex justify-between"><span class="text-slate-400">Family COL (2+1)</span><span class="font-medium">~$62–72k</span></li>
+            <li class="flex justify-between"><span class="text-slate-400">Computer & Math share</span><span class="font-medium">~1.0–1.6%</span></li>
+            <li class="flex justify-between"><span class="text-slate-400">Housing cost</span><span class="font-medium text-cyan-400">Advantage</span></li>
+          </ul>
+        </div>
+        <div class="card border-cyan-500/30">
+          <h3 class="text-sm font-medium text-cyan-400 mb-3">Twin Cities Metro</h3>
+          <ul class="space-y-3 text-sm">
+            <li class="flex justify-between"><span class="text-slate-400">Median hourly wage</span><span class="font-medium">~$28.50</span></li>
+            <li class="flex justify-between"><span class="text-slate-400">Family COL (2+1)</span><span class="font-medium">~$82k</span></li>
+            <li class="flex justify-between"><span class="text-slate-400">Computer & Math share</span><span class="font-medium text-cyan-400">Highest (~3.5%+)</span></li>
+            <li class="flex justify-between"><span class="text-slate-400">Housing cost</span><span class="font-medium text-amber-400">Highest</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Wages Section -->
+      <div class="mb-20">
+        <h2 class="text-2xl md:text-3xl font-bold mb-6">Wages</h2>
+        <p class="text-slate-300 mb-8 max-w-3xl">
+          The Twin Cities pays a clear premium, especially in tech, finance, and professional services. Greater Minnesota and Brainerd Lakes are more competitive in trades, healthcare support, manufacturing, and hospitality. For software and GIS product roles, the metro still concentrates the majority of high-wage opportunities.
+        </p>
+        <div class="card overflow-x-auto">
+          <table class="w-full text-sm">
+            <thead>
+              <tr class="border-b border-slate-700 text-left text-slate-400">
+                <th class="py-3 pr-4">Region</th>
+                <th class="py-3 pr-4">Median Hourly (all occ.)</th>
+                <th class="py-3">Notes</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-800">
+              <tr>
+                <td class="py-3 pr-4 font-medium">Twin Cities Metro</td>
+                <td class="py-3 pr-4">~$28.48</td>
+                <td class="py-3 text-slate-400">Highest concentration of software & professional roles</td>
+              </tr>
+              <tr>
+                <td class="py-3 pr-4 font-medium">Central Minnesota</td>
+                <td class="py-3 pr-4">~$23.85</td>
+                <td class="py-3 text-slate-400">Includes St. Cloud area</td>
+              </tr>
+              <tr>
+                <td class="py-3 pr-4 font-medium">Northwest Minnesota</td>
+                <td class="py-3 pr-4">~$22.98</td>
+                <td class="py-3 text-slate-400">Includes Crow Wing / Brainerd Lakes</td>
+              </tr>
+              <tr>
+                <td class="py-3 pr-4 font-medium">Statewide</td>
+                <td class="py-3 pr-4">~$26.22</td>
+                <td class="py-3 text-slate-400">Pulled upward by metro concentration</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="text-xs text-slate-500 mt-3">Source: Minnesota DEED Occupational Employment & Wage Statistics (recent releases)</p>
+      </div>
+
+      <!-- Cost of Living -->
+      <div class="mb-20">
+        <h2 class="text-2xl md:text-3xl font-bold mb-6">Cost of Living</h2>
+        <p class="text-slate-300 mb-8 max-w-3xl">
+          Housing is the dominant driver of regional differences. A typical family of two adults and one child needs substantially more income to cover basic needs in the seven-county metro than in Northwest or Central Minnesota. Transportation costs are often higher in Greater Minnesota due to longer distances.
+        </p>
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="card">
+            <h3 class="font-semibold mb-4">Family Cost of Living (2 adults + 1 child)</h3>
+            <div class="space-y-4">
+              <div>
+                <div class="flex justify-between text-sm mb-1">
+                  <span>Twin Cities 7-County</span>
+                  <span class="font-medium">~$82,000</span>
+                </div>
+                <div class="h-2 bg-slate-800 rounded-full overflow-hidden">
+                  <div class="h-full bg-amber-500 rounded-full" style="width: 100%"></div>
+                </div>
+              </div>
+              <div>
+                <div class="flex justify-between text-sm mb-1">
+                  <span>Central Minnesota</span>
+                  <span class="font-medium">~$72,000</span>
+                </div>
+                <div class="h-2 bg-slate-800 rounded-full overflow-hidden">
+                  <div class="h-full bg-cyan-500/80 rounded-full" style="width: 88%"></div>
+                </div>
+              </div>
+              <div>
+                <div class="flex justify-between text-sm mb-1">
+                  <span>Northwest Minnesota</span>
+                  <span class="font-medium">~$62,000</span>
+                </div>
+                <div class="h-2 bg-slate-800 rounded-full overflow-hidden">
+                  <div class="h-full bg-cyan-400 rounded-full" style="width: 76%"></div>
+                </div>
+              </div>
+            </div>
+            <p class="text-xs text-slate-500 mt-4">DEED Cost of Living tool (2025 data)</p>
+          </div>
+          <div class="card">
+            <h3 class="font-semibold mb-4">Key Cost Drivers</h3>
+            <ul class="space-y-3 text-sm text-slate-300">
+              <li><strong class="text-cyan-400">Housing</strong> — Largest gap. Metro housing costs significantly higher than Crow Wing County and most of Greater MN.</li>
+              <li><strong class="text-cyan-400">Childcare</strong> — Generally lower outside the metro, though still a major expense everywhere.</li>
+              <li><strong class="text-cyan-400">Transportation</strong> — Often higher in Greater Minnesota due to longer drives and fewer transit options.</li>
+              <li><strong class="text-cyan-400">Taxes</strong> — Vary by locality; overall state structure applies, but local property and sales differences exist.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Industry Gap -->
+      <div class="mb-20">
+        <h2 class="text-2xl md:text-3xl font-bold mb-6">The Software & GIS Industry Gap</h2>
+        <div class="prose prose-invert max-w-none text-slate-300 space-y-6">
+          <p>
+            Brainerd Lakes has a clear structural gap in the exact industries Spatialytics operates in: software product development, web applications, spatial analytics platforms, and business-efficiency SaaS.
+          </p>
+          <div class="card !bg-slate-900">
+            <h3 class="text-lg font-semibold text-white mb-4">What exists locally</h3>
+            <ul class="list-disc pl-5 space-y-2 text-sm">
+              <li>Internal/support GIS and IT roles at the County, City of Brainerd, public utilities, and a few telecom organizations.</li>
+              <li>Scattered technical positions at larger employers (e.g., data/BI roles).</li>
+              <li>Almost no independent software product companies or spatial-analytics startups headquartered in the area.</li>
+            </ul>
+          </div>
+          <div class="card !bg-slate-900">
+            <h3 class="text-lg font-semibold text-white mb-4">How thin the sector is</h3>
+            <ul class="list-disc pl-5 space-y-2 text-sm">
+              <li>Northwest Minnesota employs roughly <strong>2,400 people</strong> in Computer & Mathematical occupations — about <strong>1.1%</strong> of total regional employment.</li>
+              <li>Statewide average: ~3.4–3.7%. Twin Cities metro holds the large majority of these roles.</li>
+              <li>Comparable regional centers (St. Cloud ~1.4–1.6%, Southwest MN ~1.0%) also show lower concentration than the metro, but Brainerd Lakes has particularly limited pure product companies.</li>
+            </ul>
+          </div>
+          <div class="card border-cyan-500/40 !bg-slate-900">
+            <h3 class="text-lg font-semibold text-cyan-400 mb-4">Why this matters for Spatialytics</h3>
+            <ul class="list-disc pl-5 space-y-2 text-sm">
+              <li><strong>Talent leakage</strong> — CLC graduates in computer-related, graphic design, natural resources/GIS, and business programs have limited local options for higher-wage software and product roles.</li>
+              <li><strong>Market opportunity</strong> — Local print shops, municipalities, tourism businesses, and manufacturers still need modern web tools, POD platforms, and spatial dashboards.</li>
+              <li><strong>Economic development</strong> — A successful Spatialytics creates the year-round, high-wage tech jobs the region currently lacks in volume.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="text-center card border-cyan-500/30">
+        <h2 class="text-2xl font-bold mb-4">This is exactly why Spatialytics exists</h2>
+        <p class="text-slate-300 max-w-2xl mx-auto mb-8">
+          Lower operating costs + local talent pipeline + industry gap = a clear opportunity to build software and spatial tools that keep value in Greater Minnesota.
+        </p>
+        <div class="flex flex-wrap justify-center gap-4">
+          <a href="/work" class="btn-primary">See What We’ve Built</a>
+          <a href="/contact" class="btn-secondary">Talk About a Project</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

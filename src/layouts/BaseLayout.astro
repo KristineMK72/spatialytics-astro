@@ -1,0 +1,85 @@
+---
+import { ViewTransitions } from 'astro:transitions';
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { 
+  title = "Spatialytics — Spatial Intelligence & Software for Greater Minnesota",
+  description = "GIS, web applications, and business tools that keep high-value work and talent in Greater Minnesota."
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title}</title>
+    <ViewTransitions />
+    <!-- Preload fonts if needed -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  </head>
+  <body class="min-h-screen bg-slate-950 text-slate-100 bg-topo">
+    <header class="fixed top-0 inset-x-0 z-50 border-b border-slate-800/60 bg-slate-950/80 backdrop-blur-md">
+      <div class="container-narrow flex items-center justify-between h-16">
+        <a href="/" class="flex items-center gap-2 font-bold text-lg tracking-tight">
+          <span class="w-8 h-8 rounded-lg bg-gradient-to-br from-cyan-400 to-cyan-600 flex items-center justify-center text-slate-950 text-sm font-black">S</span>
+          <span>Spatialytics</span>
+        </a>
+        <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+          <a href="/solutions" class="hover:text-cyan-400 transition">Solutions</a>
+          <a href="/work" class="hover:text-cyan-400 transition">Work</a>
+          <a href="/impact" class="hover:text-cyan-400 transition">Impact</a>
+          <a href="/compare" class="hover:text-cyan-400 transition">Compare Regions</a>
+          <a href="/about" class="hover:text-cyan-400 transition">About</a>
+          <a href="/contact" class="btn-primary text-sm !px-4 !py-2">Start a Project</a>
+        </nav>
+        <!-- Mobile menu button can be added later -->
+      </div>
+    </header>
+
+    <main class="pt-16">
+      <slot />
+    </main>
+
+    <footer class="border-t border-slate-800 mt-20">
+      <div class="container-narrow py-12 flex flex-col md:flex-row justify-between gap-8">
+        <div>
+          <div class="font-bold text-lg mb-2">Spatialytics</div>
+          <p class="text-slate-400 text-sm max-w-xs">
+            Spatial intelligence and software solutions that reduce overhead, improve wages, and keep value in Greater Minnesota.
+          </p>
+        </div>
+        <div class="flex gap-12 text-sm text-slate-400">
+          <div class="space-y-2">
+            <div class="font-medium text-slate-200">Solutions</div>
+            <a href="/solutions/spatial" class="block hover:text-cyan-400">Spatial Intelligence</a>
+            <a href="/solutions/print-pod" class="block hover:text-cyan-400">Print & POD</a>
+            <a href="/solutions/business" class="block hover:text-cyan-400">Business Apps</a>
+          </div>
+          <div class="space-y-2">
+            <div class="font-medium text-slate-200">Company</div>
+            <a href="/work" class="block hover:text-cyan-400">Work</a>
+            <a href="/impact" class="block hover:text-cyan-400">Impact</a>
+            <a href="/compare" class="block hover:text-cyan-400">Regional Comparison</a>
+            <a href="/contact" class="block hover:text-cyan-400">Contact</a>
+          </div>
+        </div>
+      </div>
+      <div class="border-t border-slate-800/60">
+        <div class="container-narrow py-6 text-xs text-slate-500 flex justify-between">
+          <span>© {new Date().getFullYear()} Spatialytics LLC · Brainerd Lakes Area, Minnesota</span>
+          <span>Built with Astro</span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
