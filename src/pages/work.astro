@@ -1,0 +1,230 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const featured = [
+  {
+    title: "3D Bear Habitat Explorer",
+    description: "Interactive WebGL terrain explorer with habitat overlays. Built with MapLibre to make complex spatial data approachable for non-GIS audiences.",
+    tags: ["MapLibre", "3D", "WebGL", "Spatial"],
+    live: "https://bear-habitat-3d.vercel.app",
+    repo: "https://github.com/KristineMK72/bear-habitat-3d",
+    category: "Spatial Intelligence",
+    accent: "cyan"
+  },
+  {
+    title: "Brainerd Tech Growth Dashboard",
+    description: "Regional dashboard exploring tech employment, wages, and opportunity in the Brainerd Lakes area — the same data story that powers our impact narrative.",
+    tags: ["Dashboard", "Data Viz", "Regional"],
+    live: null,
+    repo: "https://github.com/KristineMK72/brainerd-tech-growth-dashboard",
+    category: "Spatial Intelligence",
+    accent: "cyan"
+  },
+  {
+    title: "Money Control SaaS",
+    description: "Business efficiency platform focused on financial visibility and operational control — the kind of tool that helps Greater Minnesota businesses reduce overhead.",
+    tags: ["SaaS", "TypeScript", "Business Ops"],
+    live: null,
+    repo: "https://github.com/KristineMK72/money-control-saas",
+    category: "Business Efficiency",
+    accent: "amber"
+  }
+];
+
+const projects = [
+  {
+    title: "Locus GIS",
+    description: "Python-based GIS tooling and spatial analysis workflows.",
+    tags: ["Python", "GIS"],
+    repo: "https://github.com/KristineMK72/locus-gis",
+    category: "Spatial"
+  },
+  {
+    title: "Duluth Map",
+    description: "Interactive mapping experiment focused on Duluth area data.",
+    tags: ["JavaScript", "Maps"],
+    repo: "https://github.com/KristineMK72/duluth-map",
+    category: "Spatial"
+  },
+  {
+    title: "Farm Groundwater",
+    description: "Spatial application exploring groundwater and agricultural data relationships.",
+    tags: ["TypeScript", "Natural Resources"],
+    repo: "https://github.com/KristineMK72/Farm-Groundwater",
+    category: "Spatial"
+  },
+  {
+    title: "Spatialytics Reel Generator",
+    description: "Tool for generating short-form video content and reels tied to Spatialytics storytelling.",
+    tags: ["TypeScript", "Content"],
+    repo: "https://github.com/KristineMK72/spatialytics-reel-generator",
+    category: "Tools"
+  },
+  {
+    title: "Money Control Board",
+    description: "Companion dashboard for the Money Control SaaS platform.",
+    tags: ["TypeScript", "Dashboard"],
+    repo: "https://github.com/KristineMK72/money-control-board",
+    category: "Business"
+  },
+  {
+    title: "MN Costs",
+    description: "Cost comparison tooling focused on Minnesota regional differences.",
+    tags: ["TypeScript", "Data"],
+    repo: "https://github.com/KristineMK72/MNCosts",
+    category: "Business"
+  },
+  {
+    title: "Kelly & Sons Towing",
+    description: "Modern web presence for a local towing business — clean, mobile-first, conversion-focused.",
+    tags: ["Client Work", "TypeScript"],
+    repo: "https://github.com/KristineMK72/kelly-and-sons-towing",
+    category: "Client"
+  },
+  {
+    title: "Debbie's Wave Salon",
+    description: "Website for a local salon — focused on clarity, booking readiness, and local feel.",
+    tags: ["Client Work", "TypeScript"],
+    repo: "https://github.com/KristineMK72/debbies-wave-salon",
+    category: "Client"
+  },
+  {
+    title: "Warren Kahler 80",
+    description: "Celebration site for an 80th birthday — storytelling, photos, and community.",
+    tags: ["Personal", "TypeScript"],
+    repo: "https://github.com/KristineMK72/warren-kahler-80",
+    category: "Storytelling"
+  },
+  {
+    title: "Grit & Grace / Resilient Voice",
+    description: "Astro headless frontend redesign that consumes existing APIs without breaking the live Next.js store.",
+    tags: ["Astro", "Headless", "E-commerce"],
+    repo: "https://github.com/KristineMK72/grit-and-grace-astro",
+    category: "Platform"
+  },
+  {
+    title: "Closing Task List",
+    description: "Practical operational tool for closing workflows and task tracking.",
+    tags: ["HTML", "Operations"],
+    repo: "https://github.com/KristineMK72/ClosingTaskList",
+    category: "Business"
+  },
+  {
+    title: "Stride & Glide",
+    description: "TypeScript application focused on movement and wellness tracking.",
+    tags: ["TypeScript", "Wellness"],
+    repo: "https://github.com/KristineMK72/stride-and-glide",
+    category: "Apps"
+  }
+];
+---
+
+<BaseLayout 
+  title="Our Work — Spatialytics"
+  description="Selected projects: spatial intelligence platforms, business efficiency tools, and practical web applications built for Greater Minnesota and beyond."
+>
+  <section class="section">
+    <div class="container-narrow">
+      <!-- Header -->
+      <div class="max-w-3xl mb-16">
+        <p class="text-cyan-400 font-medium mb-3 text-sm uppercase tracking-wide">Portfolio</p>
+        <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+          Explore the work
+        </h1>
+        <p class="text-lg text-slate-300 leading-relaxed">
+          Spatial platforms, efficiency tools, and real-world web applications. Most of this was built to solve local problems — for municipalities, small businesses, natural resource partners, and community projects across Minnesota.
+        </p>
+      </div>
+
+      <!-- Featured Projects -->
+      <div class="mb-20">
+        <h2 class="text-sm font-semibold text-slate-400 uppercase tracking-wider mb-8">Featured</h2>
+        <div class="grid md:grid-cols-3 gap-6">
+          {featured.map((project) => (
+            <article class="card group flex flex-col h-full">
+              <div class="flex items-center gap-2 mb-4">
+                <span class={`text-xs font-medium px-2.5 py-1 rounded-full ${project.accent === 'amber' ? 'bg-amber-500/10 text-amber-400' : 'bg-cyan-500/10 text-cyan-400'}`}>
+                  {project.category}
+                </span>
+              </div>
+              <h3 class="text-xl font-semibold mb-3 group-hover:text-cyan-400 transition">
+                {project.title}
+              </h3>
+              <p class="text-slate-400 text-sm leading-relaxed mb-5 flex-1">
+                {project.description}
+              </p>
+              <div class="flex flex-wrap gap-2 mb-6">
+                {project.tags.map((tag) => (
+                  <span class="text-xs text-slate-500 border border-slate-700 px-2 py-0.5 rounded">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+              <div class="flex gap-3 mt-auto">
+                {project.live && (
+                  <a 
+                    href={project.live} 
+                    target="_blank" 
+                    rel="noopener"
+                    class="btn-primary text-sm !px-4 !py-2"
+                  >
+                    Live Demo
+                  </a>
+                )}
+                <a 
+                  href={project.repo} 
+                  target="_blank" 
+                  rel="noopener"
+                  class="btn-secondary text-sm !px-4 !py-2"
+                >
+                  Code
+                </a>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+
+      <!-- All Projects Grid -->
+      <div>
+        <h2 class="text-sm font-semibold text-slate-400 uppercase tracking-wider mb-8">More projects</h2>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          {projects.map((project) => (
+            <a 
+              href={project.repo} 
+              target="_blank" 
+              rel="noopener"
+              class="card group block"
+            >
+              <div class="flex items-start justify-between gap-3 mb-3">
+                <h3 class="font-semibold group-hover:text-cyan-400 transition leading-snug">
+                  {project.title}
+                </h3>
+                <span class="text-xs text-slate-500 shrink-0 mt-0.5">↗</span>
+              </div>
+              <p class="text-slate-400 text-sm leading-relaxed mb-4">
+                {project.description}
+              </p>
+              <div class="flex flex-wrap gap-1.5">
+                {project.tags.map((tag) => (
+                  <span class="text-xs text-slate-500">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="mt-20 text-center card border-cyan-500/30">
+        <h2 class="text-2xl font-bold mb-4">Have a project in mind?</h2>
+        <p class="text-slate-300 max-w-xl mx-auto mb-8">
+          Whether it’s a spatial platform, a POD system for a print shop, or a custom efficiency tool — let’s build something that stays local.
+        </p>
+        <a href="/contact" class="btn-primary">Start a Conversation</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
