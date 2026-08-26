@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import RegionMap from '../components/RegionMap';
 ---
 
 <BaseLayout 
@@ -16,6 +17,15 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <p class="text-lg text-slate-300 leading-relaxed">
           Greater Minnesota — and the Brainerd Lakes area specifically — offers a real cost advantage for businesses and workers. At the same time, it has a thinner presence of the software, GIS product, and digital-platform companies that Spatialytics builds. That combination is both a challenge and an opportunity.
         </p>
+      </div>
+
+      <!-- Interactive Map -->
+      <div class="mb-20">
+        <h2 class="text-2xl md:text-3xl font-bold mb-3">Explore the regions</h2>
+        <p class="text-slate-400 text-sm mb-6 max-w-2xl">
+          Click a region on the map or use the buttons to compare wages, cost of living, and software-industry presence.
+        </p>
+        <RegionMap client:load />
       </div>
 
       <!-- Snapshot Cards -->
