@@ -1,0 +1,116 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout 
+  title="Grant Match — Localized Social Impact Platform | Spatialytics"
+  description="Map-first grant discovery for nonprofits and community organizations in Greater Minnesota. Match funding to place, mission, and need."
+>
+  <section class="section">
+    <div class="container-narrow">
+      <div class="max-w-3xl mb-12">
+        <p class="text-cyan-400 font-medium mb-3 text-sm uppercase tracking-wide">Product · Spatial Intelligence</p>
+        <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+          Find funding by <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-amber-400">place</span>, not just keywords
+        </h1>
+        <p class="text-lg text-slate-300 leading-relaxed">
+          Most grant search is a wall of text. Spatialytics Grant Match turns discovery into a map:
+          see where money flows, where it doesn’t, and which opportunities fit your organization’s service area and mission—
+          starting in Greater Minnesota and the Brainerd Lakes area.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6 mb-16">
+        <div class="card">
+          <h3 class="font-semibold text-cyan-400 mb-2">Spatial edge</h3>
+          <p class="text-sm text-slate-400">Match grants to service footprints and eligible geographies—not only keyword lists.</p>
+        </div>
+        <div class="card">
+          <h3 class="font-semibold text-cyan-400 mb-2">Local first</h3>
+          <p class="text-sm text-slate-400">Built for small nonprofits, mutual aid, and community groups that can’t afford enterprise tools.</p>
+        </div>
+        <div class="card">
+          <h3 class="font-semibold text-cyan-400 mb-2">Equity lens</h3>
+          <p class="text-sm text-slate-400">Highlight gaps between funding and need at county and community scale.</p>
+        </div>
+      </div>
+
+      <div class="mb-16">
+        <h2 class="text-2xl font-bold mb-6">How it works</h2>
+        <ol class="space-y-6">
+          <li class="flex gap-4">
+            <span class="flex-shrink-0 w-8 h-8 rounded-full bg-cyan-500/20 text-cyan-400 flex items-center justify-center text-sm font-bold">1</span>
+            <div>
+              <h3 class="font-semibold mb-1">Define your place & mission</h3>
+              <p class="text-sm text-slate-400">Service area on the map + focus areas (housing, food security, youth, economic development, etc.).</p>
+            </div>
+          </li>
+          <li class="flex gap-4">
+            <span class="flex-shrink-0 w-8 h-8 rounded-full bg-cyan-500/20 text-cyan-400 flex items-center justify-center text-sm font-bold">2</span>
+            <div>
+              <h3 class="font-semibold mb-1">Match spatially</h3>
+              <p class="text-sm text-slate-400">We intersect your footprint with grant-eligible geographies and thematic tags from federal, state, and foundation sources.</p>
+            </div>
+          </li>
+          <li class="flex gap-4">
+            <span class="flex-shrink-0 w-8 h-8 rounded-full bg-cyan-500/20 text-cyan-400 flex items-center justify-center text-sm font-bold">3</span>
+            <div>
+              <h3 class="font-semibold mb-1">Track a pipeline</h3>
+              <p class="text-sm text-slate-400">Save opportunities, note status (discovering → applied → awarded), and keep deadlines visible.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+
+      <div class="mb-16 card border-cyan-500/30">
+        <h2 class="text-xl font-bold mb-4">MVP scope (Greater Minnesota)</h2>
+        <div class="grid sm:grid-cols-2 gap-6 text-sm text-slate-300">
+          <div>
+            <h3 class="font-medium text-white mb-2">In scope</h3>
+            <ul class="space-y-1.5 list-disc pl-4 text-slate-400">
+              <li>MapLibre map of MN counties / key service areas</li>
+              <li>Curated grant feed (Launch MN, DEED, Initiative Foundations, selected federal)</li>
+              <li>Org profile: mission tags + service area polygon</li>
+              <li>Spatial + category match list</li>
+              <li>Simple pipeline (save / status)</li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="font-medium text-white mb-2">Later</h3>
+            <ul class="space-y-1.5 list-disc pl-4 text-slate-400">
+              <li>Full Grants.gov automation</li>
+              <li>IRS 990 / foundation deep ingest</li>
+              <li>Census-tract equity overlays</li>
+              <li>Statewide + multi-state expansion</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="mb-16">
+        <h2 class="text-2xl font-bold mb-4">Stack (aligned with Spatialytics)</h2>
+        <div class="flex flex-wrap gap-2 text-sm">
+          <span class="px-3 py-1 rounded-full border border-slate-700 text-slate-300">Next.js</span>
+          <span class="px-3 py-1 rounded-full border border-slate-700 text-slate-300">Supabase + PostGIS</span>
+          <span class="px-3 py-1 rounded-full border border-slate-700 text-slate-300">MapLibre GL</span>
+          <span class="px-3 py-1 rounded-full border border-slate-700 text-slate-300">Grants.gov / state feeds</span>
+        </div>
+        <p class="text-sm text-slate-500 mt-4">
+          Same spatial stack we already use on the marketing site and product demos—built for place-based matching, not generic keyword search.
+        </p>
+      </div>
+
+      <div class="text-center card border-cyan-500/30">
+        <h2 class="text-2xl font-bold mb-4">Built for communities that get left off the map</h2>
+        <p class="text-slate-300 max-w-xl mx-auto mb-8">
+          Enterprise grant databases weren’t designed for a food shelf in Crow Wing County or a youth program in Bemidji.
+          Grant Match is—map-first, local-first, and priced for the organizations that need it most.
+        </p>
+        <div class="flex flex-wrap justify-center gap-4">
+          <a href="/contact" class="btn-primary">Talk about a pilot</a>
+          <a href="/compare" class="btn-secondary">See the regional gap</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
