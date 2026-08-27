@@ -35,8 +35,11 @@ const navLinks = [
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   </head>
   <body class="min-h-screen bg-slate-950 text-slate-100 bg-topo">
-    <header class="fixed top-0 inset-x-0 z-[100] border-b border-slate-700/80 bg-slate-950/95 backdrop-blur-md shadow-lg shadow-black/30" transition:persist="header">
-      <div class="container-narrow flex items-center justify-between h-16 relative">
+    <!-- Checkbox first so peer-* works on following siblings -->
+    <input type="checkbox" id="nav-toggle" class="peer sr-only" />
+
+    <header class="fixed top-0 inset-x-0 z-[100] border-b border-slate-700/80 bg-slate-950 shadow-lg shadow-black/30" transition:persist="header">
+      <div class="container-narrow flex items-center justify-between h-16">
         <a href="/" class="flex items-center gap-2 font-bold text-lg tracking-tight relative z-[110]">
           <span class="w-8 h-8 rounded-lg bg-gradient-to-br from-cyan-400 to-cyan-600 flex items-center justify-center text-slate-950 text-sm font-black">S</span>
           <span class="text-white">Spatialytics</span>
@@ -50,8 +53,7 @@ const navLinks = [
           <a href="/contact" class="btn-primary text-sm !px-4 !py-2">Start a Project</a>
         </nav>
 
-        <!-- Mobile: checkbox toggle (works without JS) -->
-        <input type="checkbox" id="nav-toggle" class="peer sr-only" />
+        <!-- Mobile hamburger -->
         <label 
           for="nav-toggle" 
           class="md:hidden relative z-[110] flex items-center justify-center w-11 h-11 rounded-xl bg-slate-800 border border-slate-500 text-white hover:bg-slate-700 hover:border-cyan-400/60 cursor-pointer select-none shadow-md"
@@ -64,32 +66,33 @@ const navLinks = [
             <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
           </svg>
         </label>
-
-        <!-- Mobile menu panel -->
-        <div 
-          class="mobile-panel md:hidden fixed inset-x-0 top-16 bottom-0 z-[90] bg-slate-950 border-t border-slate-700 
-                 opacity-0 pointer-events-none transition-opacity duration-200
-                 peer-checked:opacity-100 peer-checked:pointer-events-auto"
-        >
-          <nav class="container-narrow py-8 flex flex-col gap-1">
-            {navLinks.map(link => (
-              <a 
-                href={link.href} 
-                class="mobile-link px-4 py-3 text-lg font-medium text-white hover:text-cyan-400 hover:bg-slate-900 rounded-xl transition"
-              >
-                {link.label}
-              </a>
-            ))}
-            <a 
-              href="/contact" 
-              class="mobile-link mt-4 btn-primary text-center"
-            >
-              Start a Project
-            </a>
-          </nav>
-        </div>
       </div>
     </header>
+
+    <!-- Full-screen solid menu — OUTSIDE header so fixed is relative to viewport -->
+    <div 
+      class="mobile-panel md:hidden fixed inset-0 z-[95] bg-slate-950
+             opacity-0 pointer-events-none transition-opacity duration-200
+             peer-checked:opacity-100 peer-checked:pointer-events-auto"
+    >
+      <div class="h-16 border-b border-slate-700"></div>
+      <nav class="container-narrow py-8 flex flex-col gap-1">
+        {navLinks.map(link => (
+          <a 
+            href={link.href} 
+            class="mobile-link px-4 py-3 text-lg font-medium text-white hover:text-cyan-400 hover:bg-slate-900 rounded-xl transition"
+          >
+            {link.label}
+          </a>
+        ))}
+        <a 
+          href="/contact" 
+          class="mobile-link mt-4 btn-primary text-center"
+        >
+          Start a Project
+        </a>
+      </nav>
+    </div>
 
     <main class="pt-16">
       <slot />
@@ -132,11 +135,15 @@ const navLinks = [
     </footer>
 
     <style>
-      #nav-toggle:checked ~ label .open-icon { display: none !important; }
-      #nav-toggle:checked ~ label .close-icon { display: block !important; }
+      /* Icon swap */
+      #nav-toggle:checked ~ header label .open-icon { display: none !important; }
+      #nav-toggle:checked ~ header label .close-icon { display: block !important; }
+
+      /* Solid full-screen panel — never transparent */
       .mobile-panel {
-        background-color: rgb(2 6 23) !important;
+        background-color: #020617 !important;
       }
+
       header label[for="nav-toggle"] {
         color: #fff !important;
       }
