@@ -28,6 +28,112 @@ import RegionMap from '../components/RegionMap';
         <RegionMap client:load />
       </div>
 
+      <!-- Tech share chart — argument for Spatialytics in Brainerd Lakes -->
+      <div class="mb-20">
+        <h2 class="text-2xl md:text-3xl font-bold mb-3">Where tech jobs sit — and where they don’t</h2>
+        <p class="text-slate-300 mb-8 max-w-3xl leading-relaxed">
+          Computer & Mathematical occupations make up about <strong class="text-white">3.3%</strong> of Minnesota jobs overall.
+          In the Twin Cities metro that share is higher. In Northwest Minnesota — home to the Brainerd Lakes area — it falls to roughly
+          <strong class="text-amber-400">1.0–1.2%</strong>, among the lowest on the map. That gap is exactly why building Spatialytics here matters:
+          the demand for software and spatial tools exists; the local product industry does not, at scale.
+        </p>
+
+        <div class="card !p-6 md:!p-8">
+          <p class="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-6">
+            Computer & Math jobs as % of regional employment
+          </p>
+          <div class="space-y-4">
+            <div>
+              <div class="flex justify-between text-sm mb-1.5">
+                <span class="font-medium">Twin Cities Metro</span>
+                <span class="text-slate-300">~4.0–4.9%</span>
+              </div>
+              <div class="h-3 bg-slate-800 rounded-full overflow-hidden">
+                <div class="h-full rounded-full bg-amber-400" style="width: 100%"></div>
+              </div>
+            </div>
+            <div>
+              <div class="flex justify-between text-sm mb-1.5">
+                <span class="font-medium text-slate-300">Minnesota average</span>
+                <span class="text-slate-400">~3.3%</span>
+              </div>
+              <div class="h-3 bg-slate-800 rounded-full overflow-hidden">
+                <div class="h-full rounded-full bg-slate-500" style="width: 70%"></div>
+              </div>
+            </div>
+            <div>
+              <div class="flex justify-between text-sm mb-1.5">
+                <span class="font-medium">Southeast <span class="text-slate-500 font-normal">(Rochester effect)</span></span>
+                <span class="text-slate-300">~2.4%</span>
+              </div>
+              <div class="h-3 bg-slate-800 rounded-full overflow-hidden">
+                <div class="h-full rounded-full bg-pink-400/80" style="width: 51%"></div>
+              </div>
+            </div>
+            <div>
+              <div class="flex justify-between text-sm mb-1.5">
+                <span class="font-medium">Northeast</span>
+                <span class="text-slate-300">~1.3–1.6%</span>
+              </div>
+              <div class="h-3 bg-slate-800 rounded-full overflow-hidden">
+                <div class="h-full rounded-full bg-teal-400/80" style="width: 32%"></div>
+              </div>
+            </div>
+            <div>
+              <div class="flex justify-between text-sm mb-1.5">
+                <span class="font-medium">Central</span>
+                <span class="text-slate-300">~1.2–1.5%</span>
+              </div>
+              <div class="h-3 bg-slate-800 rounded-full overflow-hidden">
+                <div class="h-full rounded-full bg-cyan-300/70" style="width: 30%"></div>
+              </div>
+            </div>
+            <div class="rounded-xl border border-cyan-500/40 bg-cyan-500/5 p-3 -mx-1">
+              <div class="flex justify-between text-sm mb-1.5">
+                <span class="font-semibold text-cyan-300">Northwest <span class="text-cyan-400/80 font-normal">(Brainerd Lakes)</span></span>
+                <span class="font-semibold text-amber-400">~1.0–1.2%</span>
+              </div>
+              <div class="h-3 bg-slate-800 rounded-full overflow-hidden">
+                <div class="h-full rounded-full bg-cyan-400" style="width: 24%"></div>
+              </div>
+              <p class="text-xs text-slate-400 mt-2">Among the lowest shares on the map — and almost no independent software product companies locally.</p>
+            </div>
+            <div>
+              <div class="flex justify-between text-sm mb-1.5">
+                <span class="font-medium">Southwest</span>
+                <span class="text-slate-300">~1.0–1.1%</span>
+              </div>
+              <div class="h-3 bg-slate-800 rounded-full overflow-hidden">
+                <div class="h-full rounded-full bg-violet-400/70" style="width: 22%"></div>
+              </div>
+            </div>
+          </div>
+          <p class="text-xs text-slate-500 mt-6">
+            Approximate shares from Minnesota DEED Occupational Employment & Wage Statistics (Computer & Mathematical occupations) relative to regional employment. Metro concentration is even higher than the statewide average; Northwest and Southwest sit at the bottom of the pack.
+          </p>
+        </div>
+
+        <div class="mt-8 grid md:grid-cols-2 gap-6">
+          <div class="card border-cyan-500/30">
+            <h3 class="font-semibold text-cyan-400 mb-3">Why this is an argument for Spatialytics here</h3>
+            <ul class="space-y-2 text-sm text-slate-300">
+              <li>• The careers exist in Minnesota — they’re concentrated ~2 hours south.</li>
+              <li>• Brainerd Lakes residents face a spatial mismatch: tech work vs. place.</li>
+              <li>• Local product companies in software/GIS are scarce; internal IT is not the same as a product industry.</li>
+              <li>• Building here creates year-round, higher-wage options without forcing relocation.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3 class="font-semibold text-white mb-3">What “gap” does not mean</h3>
+            <ul class="space-y-2 text-sm text-slate-300">
+              <li>• It does not mean zero technical work — counties, cities, utilities, and some employers need IT/GIS.</li>
+              <li>• It does mean few independent software product firms headquartered in the lakes area.</li>
+              <li>• That is the opening: tools and jobs that stay local.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
       <!-- Snapshot Cards -->
       <div class="grid md:grid-cols-3 gap-6 mb-20">
         <div class="card">
@@ -146,7 +252,7 @@ import RegionMap from '../components/RegionMap';
             <ul class="space-y-3 text-sm text-slate-300">
               <li><strong class="text-cyan-400">Housing</strong> — Largest gap. Metro housing costs significantly higher than Crow Wing County and most of Greater MN.</li>
               <li><strong class="text-cyan-400">Childcare</strong> — Generally lower outside the metro, though still a major expense everywhere.</li>
-              <li><strong class="text-cyan-400">Transportation</strong> — Often higher in Greater Minnesota due to longer drives and fewer transit options.</li>
+              <li><strong class="text-cyan-400">Transportation</strong> — Often higher in Greater Minnesota due to longer distances and fewer transit options.</li>
               <li><strong class="text-cyan-400">Taxes</strong> — Vary by locality; overall state structure applies, but local property and sales differences exist.</li>
             </ul>
           </div>
