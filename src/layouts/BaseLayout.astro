@@ -35,11 +35,11 @@ const navLinks = [
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   </head>
   <body class="min-h-screen bg-slate-950 text-slate-100 bg-topo">
-    <header class="fixed top-0 inset-x-0 z-50 border-b border-slate-800/60 bg-slate-950/80 backdrop-blur-md">
+    <header class="fixed top-0 inset-x-0 z-[100] border-b border-slate-700/80 bg-slate-950/95 backdrop-blur-md shadow-lg shadow-black/30" transition:persist="header">
       <div class="container-narrow flex items-center justify-between h-16 relative">
-        <a href="/" class="flex items-center gap-2 font-bold text-lg tracking-tight relative z-50">
+        <a href="/" class="flex items-center gap-2 font-bold text-lg tracking-tight relative z-[110]">
           <span class="w-8 h-8 rounded-lg bg-gradient-to-br from-cyan-400 to-cyan-600 flex items-center justify-center text-slate-950 text-sm font-black">S</span>
-          <span>Spatialytics</span>
+          <span class="text-white">Spatialytics</span>
         </a>
 
         <!-- Desktop nav -->
@@ -54,20 +54,20 @@ const navLinks = [
         <input type="checkbox" id="nav-toggle" class="peer sr-only" />
         <label 
           for="nav-toggle" 
-          class="md:hidden relative z-50 p-2 text-slate-300 hover:text-white cursor-pointer select-none"
+          class="md:hidden relative z-[110] flex items-center justify-center w-11 h-11 rounded-xl bg-slate-800 border border-slate-500 text-white hover:bg-slate-700 hover:border-cyan-400/60 cursor-pointer select-none shadow-md"
           aria-label="Toggle menu"
         >
-          <svg class="w-6 h-6 open-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          <svg class="w-6 h-6 open-icon" fill="none" stroke="currentColor" stroke-width="2.25" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
           </svg>
-          <svg class="w-6 h-6 close-icon hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          <svg class="w-6 h-6 close-icon hidden" fill="none" stroke="currentColor" stroke-width="2.25" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
           </svg>
         </label>
 
         <!-- Mobile menu panel -->
         <div 
-          class="mobile-panel md:hidden fixed inset-x-0 top-16 bottom-0 z-40 bg-slate-950/98 backdrop-blur-lg border-t border-slate-800 
+          class="mobile-panel md:hidden fixed inset-x-0 top-16 bottom-0 z-[90] bg-slate-950 border-t border-slate-700 
                  opacity-0 pointer-events-none transition-opacity duration-200
                  peer-checked:opacity-100 peer-checked:pointer-events-auto"
         >
@@ -75,7 +75,7 @@ const navLinks = [
             {navLinks.map(link => (
               <a 
                 href={link.href} 
-                class="mobile-link px-4 py-3 text-lg font-medium text-slate-200 hover:text-cyan-400 hover:bg-slate-900/50 rounded-xl transition"
+                class="mobile-link px-4 py-3 text-lg font-medium text-white hover:text-cyan-400 hover:bg-slate-900 rounded-xl transition"
               >
                 {link.label}
               </a>
@@ -132,8 +132,14 @@ const navLinks = [
     </footer>
 
     <style>
-      #nav-toggle:checked ~ label .open-icon { display: none; }
+      #nav-toggle:checked ~ label .open-icon { display: none !important; }
       #nav-toggle:checked ~ label .close-icon { display: block !important; }
+      .mobile-panel {
+        background-color: rgb(2 6 23) !important;
+      }
+      header label[for="nav-toggle"] {
+        color: #fff !important;
+      }
     </style>
 
     <script is:inline>
