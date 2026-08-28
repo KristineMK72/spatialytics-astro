@@ -3,6 +3,33 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 const featured = [
   {
+    title: "Grant Match",
+    description: "Map-first grant discovery and a guided proposal writer for Greater Minnesota nonprofits. Search local + Grants.gov, then start a draft from any listing.",
+    tags: ["Next.js", "MapLibre", "Grants.gov", "Social Impact"],
+    live: "https://spatialytics-grant-match.vercel.app",
+    repo: "https://github.com/KristineMK72/spatialytics-grant-match",
+    category: "Social Impact",
+    accent: "cyan"
+  },
+  {
+    title: "HyperLocal Insights",
+    description: "Drop a pin or search an address to read the neighborhood — competitors, demographics, and zoning in one map-first panel. Built around Brainerd Lakes and Greater Minnesota places.",
+    tags: ["Leaflet", "Location Intel", "Demographics"],
+    live: "https://hyperlocal-insights.vercel.app",
+    repo: null,
+    category: "Spatial Intelligence",
+    accent: "cyan"
+  },
+  {
+    title: "GH-Impact Wrangler",
+    description: "Zero-friction geo cleaning: drop CSV, GeoJSON, or a zipped shapefile, geocode, buffer, and get web-ready data without a desktop GIS stack.",
+    tags: ["GeoJSON", "Shapefile", "Data Prep", "H3"],
+    live: "https://gh-impact-wrangler.vercel.app",
+    repo: null,
+    category: "Spatial Tools",
+    accent: "cyan"
+  },
+  {
     title: "3D Bear Habitat Explorer",
     description: "Interactive WebGL terrain explorer with habitat overlays. Built with MapLibre to make complex spatial data approachable for non-GIS audiences.",
     tags: ["MapLibre", "3D", "WebGL", "Spatial"],
@@ -133,7 +160,7 @@ const projects = [
 
 <BaseLayout 
   title="Our Work — Spatialytics"
-  description="Selected projects: spatial intelligence platforms, business efficiency tools, and practical web applications built for Greater Minnesota and beyond."
+  description="Selected projects: spatial intelligence platforms, grant matching, business efficiency tools, and practical web applications built for Greater Minnesota and beyond."
 >
   <section class="section">
     <div class="container-narrow">
@@ -143,7 +170,7 @@ const projects = [
           Explore the work
         </h1>
         <p class="text-lg text-slate-300 leading-relaxed">
-          Spatial platforms, efficiency tools, and real-world web applications. Click through to live demos — most of these are running on Vercel right now.
+          Spatial platforms, grant tools, efficiency apps, and real-world sites. Click through to live demos — most of these are running on Vercel right now.
         </p>
       </div>
 
