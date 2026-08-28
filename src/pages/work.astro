@@ -4,7 +4,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 const featured = [
   {
     title: "AskBen",
-    description: "B2C money triage. You type the bills. Ben ranks what to pay next. No bank login. Franklin’s Landing — harbor, lanterns, NPCs — unlocks after the ledger has one number. Shipped the full town and ledger-first path on 28 Aug 2026.",
+    description: "B2C money triage. You type the bills. Ben ranks what to pay next. No bank login. Franklin’s Landing unlocks after the ledger has one number. Full town + ledger-first path shipped 28 Aug 2026.",
     tags: ["B2C", "Next.js", "Supabase", "Three.js"],
     live: "https://www.askben.buzz",
     repo: "https://github.com/KristineMK72/money-control-saas",
@@ -12,12 +12,12 @@ const featured = [
     accent: "amber"
   },
   {
-    title: "Grant Match",
-    description: "Map-first grant discovery and a guided proposal writer for Greater Minnesota nonprofits. Search local + Grants.gov, then start a draft from any listing.",
-    tags: ["Next.js", "MapLibre", "Grants.gov", "Social Impact"],
-    live: "https://spatialytics-grant-match.vercel.app",
-    repo: "https://github.com/KristineMK72/spatialytics-grant-match",
-    category: "Social Impact",
+    title: "Aperture",
+    description: "Community intelligence for schools and public agencies. Mental health, bullying, and suicide indicators joined to U.S. Census ACS so a place can see risk next to neighborhood context. Private preview.",
+    tags: ["Civic", "Census ACS", "Community Health"],
+    live: null,
+    repo: null,
+    category: "Civic Intelligence",
     accent: "cyan"
   },
   {
@@ -30,35 +30,51 @@ const featured = [
     accent: "cyan"
   },
   {
+    title: "Grant Match",
+    description: "Map-first grant discovery and a guided proposal writer for Greater Minnesota nonprofits. Search local + Grants.gov, then start a draft from any listing.",
+    tags: ["Next.js", "MapLibre", "Grants.gov", "Social Impact"],
+    live: "https://spatialytics-grant-match.vercel.app",
+    repo: "https://github.com/KristineMK72/spatialytics-grant-match",
+    category: "Social Impact",
+    accent: "cyan"
+  },
+  {
     title: "HyperLocal Insights",
-    description: "Drop a pin or search an address to read the neighborhood — competitors, demographics, and zoning in one map-first panel. Built around Brainerd Lakes and Greater Minnesota places.",
-    tags: ["Leaflet", "Location Intel", "Demographics"],
+    description: "Drop a pin or search an address to read the neighborhood — competitors, demographics, and zoning in one map-first panel.",
+    tags: ["Leaflet", "OSM", "Census ACS"],
     live: "https://hyperlocal-insights.vercel.app",
-    repo: null,
+    repo: "https://github.com/KristineMK72/hyperlocal-insights",
     category: "Spatial Intelligence",
     accent: "cyan"
   },
   {
     title: "GH-Impact Wrangler",
-    description: "Zero-friction geo cleaning: drop CSV, GeoJSON, or a zipped shapefile, geocode, buffer, and get web-ready data without a desktop GIS stack.",
-    tags: ["GeoJSON", "Shapefile", "Data Prep", "H3"],
+    description: "Zero-friction geo cleaning: drop CSV, GeoJSON, or a zipped shapefile and get web-ready data without a desktop GIS stack.",
+    tags: ["GeoJSON", "FastAPI", "Data Prep"],
     live: "https://gh-impact-wrangler.vercel.app",
-    repo: null,
+    repo: "https://github.com/KristineMK72/gh-impact-wrangler",
     category: "Spatial Tools",
-    accent: "cyan"
-  },
-  {
-    title: "3D Bear Habitat Explorer",
-    description: "Interactive WebGL terrain explorer with habitat overlays. Built with MapLibre to make complex spatial data approachable for non-GIS audiences.",
-    tags: ["MapLibre", "3D", "WebGL", "Spatial"],
-    live: "https://bear-habitat-3d.vercel.app",
-    repo: "https://github.com/KristineMK72/bear-habitat-3d",
-    category: "Spatial Intelligence",
     accent: "cyan"
   }
 ];
 
 const projects = [
+  {
+    title: "Closing Task List",
+    description: "Retail close-out checklist for a shift that has to actually finish — built for the Cosmoprof floor, reusable anywhere the night has a list.",
+    tags: ["Ops", "HTML", "Retail"],
+    live: null,
+    repo: "https://github.com/KristineMK72/ClosingTaskList",
+    category: "Ops"
+  },
+  {
+    title: "3D Bear Habitat Explorer",
+    description: "Interactive WebGL terrain with habitat overlays for non-GIS audiences.",
+    tags: ["MapLibre", "3D", "WebGL"],
+    live: "https://bear-habitat-3d.vercel.app",
+    repo: "https://github.com/KristineMK72/bear-habitat-3d",
+    category: "Spatial"
+  },
   {
     title: "Brainerd Tech Growth Dashboard",
     description: "Regional dashboard exploring tech employment, wages, and opportunity in the Brainerd Lakes area.",
@@ -104,7 +120,7 @@ const projects = [
 
 <BaseLayout 
   title="Our Work — Spatialytics"
-  description="AskBen (B2C money triage), spatial platforms, grant matching, and practical web applications built for Greater Minnesota."
+  description="AskBen, Aperture, groundwater, grant match, and the newest Spatialytics apps."
 >
   <section class="section">
     <div class="container-narrow">
@@ -114,7 +130,7 @@ const projects = [
           Explore the work
         </h1>
         <p class="text-lg text-slate-300 leading-relaxed">
-          Maps and tools for places. AskBen for a person with a due date. Click through to live demos.
+          This week’s stack: AskBen for households, Aperture for schools and agencies, pin-drop groundwater and hyperlocal intel for places.
         </p>
       </div>
 
@@ -143,14 +159,13 @@ const projects = [
               </div>
               <div class="flex flex-wrap gap-3 mt-auto">
                 {project.live && (
-                  <a href={project.live} target="_blank" rel="noopener" class="btn-primary text-sm !px-4 !py-2">
-                    Live Demo →
-                  </a>
+                  <a href={project.live} target="_blank" rel="noopener" class="btn-primary text-sm !px-4 !py-2">Live Demo →</a>
                 )}
                 {project.repo && (
-                  <a href={project.repo} target="_blank" rel="noopener" class="btn-secondary text-sm !px-4 !py-2">
-                    Code
-                  </a>
+                  <a href={project.repo} target="_blank" rel="noopener" class="btn-secondary text-sm !px-4 !py-2">Code</a>
+                )}
+                {!project.live && !project.repo && (
+                  <span class="text-xs text-slate-500">Private preview</span>
                 )}
               </div>
             </article>
@@ -167,20 +182,12 @@ const projects = [
             return (
               <a href={href} target="_blank" rel="noopener" class="card group block">
                 <div class="flex items-start justify-between gap-3 mb-3">
-                  <h3 class="font-semibold group-hover:text-cyan-400 transition leading-snug">
-                    {project.title}
-                  </h3>
+                  <h3 class="font-semibold group-hover:text-cyan-400 transition leading-snug">{project.title}</h3>
                   <span class="text-xs shrink-0 mt-0.5">
-                    {isLive ? (
-                      <span class="text-cyan-400 font-medium">Live →</span>
-                    ) : (
-                      <span class="text-slate-500">Code ↗</span>
-                    )}
+                    {isLive ? <span class="text-cyan-400 font-medium">Live →</span> : <span class="text-slate-500">Code ↗</span>}
                   </span>
                 </div>
-                <p class="text-slate-400 text-sm leading-relaxed mb-4">
-                  {project.description}
-                </p>
+                <p class="text-slate-400 text-sm leading-relaxed mb-4">{project.description}</p>
                 <div class="flex flex-wrap gap-1.5 items-center">
                   {project.tags.map((tag) => (
                     <span class="text-xs text-slate-500">{tag}</span>
@@ -195,7 +202,7 @@ const projects = [
       <div class="mt-20 text-center card border-cyan-500/30">
         <h2 class="text-2xl font-bold mb-4">Have a project in mind?</h2>
         <p class="text-slate-300 max-w-xl mx-auto mb-8">
-          Spatial platform, print-shop POD, or a custom efficiency tool — let’s build something that stays local.
+          Spatial platform, civic layer, or a custom efficiency tool — let’s build something that stays local.
         </p>
         <a href="/contact" class="btn-primary">Start a Conversation</a>
       </div>
