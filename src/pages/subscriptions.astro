@@ -1,0 +1,227 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const plans = [
+  {
+    name: 'Starter',
+    price: '$29',
+    period: '/month',
+    description: 'Perfect for single-location shops and independent retailers scouting new spots.',
+    features: [
+      'Site Selection Scorer',
+      'Customer CSV Upload & Clustering',
+      'Basic Demographics Layer',
+      'Standard Map Support',
+    ],
+    popular: false,
+  },
+  {
+    name: 'Growth',
+    price: '$79',
+    period: '/month',
+    description: 'Ideal for mobile fleets, multi-location operators, and growing service teams.',
+    features: [
+      'Everything in Starter',
+      'Field Service Route Optimizer',
+      'Sales & Franchise Territory Planner',
+      'White Space Opportunity Finder',
+      'Executive PDF Pitch Deck Export',
+    ],
+    popular: true,
+  },
+  {
+    name: 'Enterprise',
+    price: '$199',
+    period: '/month',
+    description: 'For small franchisors, community orgs, and regional multi-unit operators.',
+    features: [
+      'Everything in Growth',
+      'Multi-User Collaboration Seats',
+      'Custom GIS Data Layer Ingestion',
+      'Priority AI Copilot Processing',
+      'Dedicated Support',
+    ],
+    popular: false,
+  },
+];
+
+const tools = [
+  {
+    title: 'Spatialytics OS',
+    tag: 'Command Center',
+    status: 'Subscriptions',
+    description:
+      'Geospatial command center for SMBs, franchises, and community organizations — site selection, territory planning, customer clustering, route optimization, and more.',
+    live: null,
+    repo: 'https://github.com/KristineMK72/spatialytics-os',
+  },
+  {
+    title: 'Grant Match',
+    tag: 'Nonprofits',
+    status: 'Live',
+    description:
+      'Map-first grant discovery for Greater Minnesota nonprofits. Match funding to place + mission, not just keywords.',
+    live: 'https://spatialytics-grant-match.vercel.app',
+    repo: 'https://github.com/KristineMK72/spatialytics-grant-match',
+  },
+  {
+    title: 'Groundwater Screen',
+    tag: 'Minnesota',
+    status: 'Live',
+    description:
+      'Drop a pin and get a screening read from live public layers: County Well Index wells, water-table vulnerability, and a plain-language site score.',
+    live: 'https://spatialytics-groundwater.vercel.app',
+    repo: 'https://github.com/KristineMK72/spatialytics-groundwater',
+  },
+  {
+    title: 'Impact Wrangler',
+    tag: 'Data tool',
+    status: 'Live',
+    description:
+      'Zero-friction geographic data wrangling: drag-and-drop messy CSVs or coordinate lists → validated, reprojected, clean GeoJSON/Shapefile in seconds.',
+    live: 'https://gh-impact-wrangler.vercel.app',
+    repo: 'https://github.com/KristineMK72/gh-impact-wrangler',
+  },
+  {
+    title: 'HyperLocal Insights',
+    tag: 'Market intel',
+    status: 'Live',
+    description:
+      'Lightweight hyper-local market & community intelligence. Drop a pin for zoning context, demographics, and competitor density.',
+    live: 'https://hyperlocal-insights.vercel.app',
+    repo: 'https://github.com/KristineMK72/hyperlocal-insights',
+  },
+  {
+    title: 'AskBen',
+    tag: 'B2C',
+    status: 'Live',
+    description:
+      'Consumer money triage. You type the bills. Ben ranks what to pay next. No bank login.',
+    live: 'https://www.askben.buzz',
+    repo: 'https://github.com/KristineMK72/money-control-saas',
+  },
+];
+---
+
+<BaseLayout
+  title="Subscriptions & Tools — Spatialytics"
+  description="Spatialytics OS subscription plans and the latest location intelligence tools for Greater Minnesota."
+>
+  <section class="section">
+    <div class="container-narrow">
+      <div class="max-w-3xl mb-16">
+        <p class="text-cyan-400 font-medium mb-3 text-sm uppercase tracking-wide">Subscriptions & tools</p>
+        <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+          Enterprise-grade location intel without the enterprise price tag
+        </h1>
+        <p class="text-lg text-slate-300 leading-relaxed">
+          Subscribe to <strong class="text-white">Spatialytics OS</strong> for ongoing access to the command center,
+          or explore the focused tools we ship for Greater Minnesota businesses, nonprofits, and community partners.
+        </p>
+      </div>
+
+      <!-- Pricing -->
+      <div class="mb-20">
+        <div class="mb-10">
+          <p class="text-cyan-400 text-sm font-medium mb-2 uppercase tracking-wide">Spatialytics OS</p>
+          <h2 class="text-3xl font-bold mb-3">Simple, transparent pricing</h2>
+          <p class="text-slate-400 max-w-2xl">
+            All plans include the core command-center experience. Higher tiers unlock route optimization,
+            territory tools, multi-user seats, and priority support.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6">
+          {plans.map((plan) => (
+            <div
+              class={`card flex flex-col h-full ${plan.popular ? 'border-cyan-500/50 ring-1 ring-cyan-500/20' : ''}`}
+            >
+              <div class="flex items-center justify-between gap-2 mb-2">
+                <h3 class="text-xl font-bold">{plan.name}</h3>
+                {plan.popular && (
+                  <span class="text-xs font-semibold uppercase tracking-wide px-2.5 py-1 rounded-full bg-cyan-500/15 text-cyan-400 border border-cyan-500/30">
+                    Popular
+                  </span>
+                )}
+              </div>
+              <div class="mb-3">
+                <span class="text-3xl font-black text-white">{plan.price}</span>
+                <span class="text-sm text-slate-500 ml-1">{plan.period}</span>
+              </div>
+              <p class="text-sm text-slate-400 mb-6">{plan.description}</p>
+              <ul class="space-y-2.5 text-sm text-slate-300 mb-8 flex-1">
+                {plan.features.map((f) => (
+                  <li class="flex gap-2">
+                    <span class="text-cyan-400 font-bold shrink-0">✓</span>
+                    <span>{f}</span>
+                  </li>
+                ))}
+              </ul>
+              <a href="/contact" class={plan.popular ? 'btn-primary text-sm text-center' : 'btn-secondary text-sm text-center'}>
+                Choose {plan.name}
+              </a>
+            </div>
+          ))}
+        </div>
+
+        <p class="text-center text-sm text-slate-500 mt-8">
+          Checkout runs securely via Stripe inside Spatialytics OS.
+          Prefer a custom scope or grant-funded pilot? <a href="/contact" class="text-cyan-400 hover:underline">Contact us</a>.
+        </p>
+      </div>
+
+      <!-- Latest tools -->
+      <div class="mb-20">
+        <div class="mb-10">
+          <p class="text-cyan-400 text-sm font-medium mb-2 uppercase tracking-wide">Latest tools</p>
+          <h2 class="text-3xl font-bold mb-3">What we’ve been shipping</h2>
+          <p class="text-slate-400 max-w-2xl">
+            Focused products and micro-tools that sit alongside the subscription platform — ready to use, extend, or embed.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {tools.map((tool) => (
+            <article class="card group flex flex-col h-full">
+              <div class="flex items-center justify-between gap-2 mb-4">
+                <span class="text-xs font-medium px-2.5 py-1 rounded-full bg-cyan-500/10 text-cyan-400">
+                  {tool.tag}
+                </span>
+                <span class="text-xs text-slate-500 border border-slate-700 px-2 py-0.5 rounded-full">
+                  {tool.status}
+                </span>
+              </div>
+              <h3 class="text-xl font-semibold mb-3 group-hover:text-cyan-400 transition">{tool.title}</h3>
+              <p class="text-slate-400 text-sm leading-relaxed mb-6 flex-1">{tool.description}</p>
+              <div class="flex flex-wrap gap-3 mt-auto">
+                {tool.live && (
+                  <a href={tool.live} target="_blank" rel="noopener" class="btn-primary text-sm !px-4 !py-2">
+                    Live Demo →
+                  </a>
+                )}
+                {tool.repo && (
+                  <a href={tool.repo} target="_blank" rel="noopener" class="btn-secondary text-sm !px-4 !py-2">
+                    Code
+                  </a>
+                )}
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="text-center card border-cyan-500/30">
+        <h2 class="text-2xl font-bold mb-4">Ready to subscribe or pilot a tool?</h2>
+        <p class="text-slate-300 max-w-xl mx-auto mb-8">
+          Tell us about your locations, data, and decisions. We’ll recommend the right plan or a focused build that fits your timeline and budget.
+        </p>
+        <div class="flex flex-wrap justify-center gap-4">
+          <a href="/contact" class="btn-primary">Talk about a plan</a>
+          <a href="/work" class="btn-secondary">See all work</a>
+          <a href="/solutions" class="btn-secondary">Solutions</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
