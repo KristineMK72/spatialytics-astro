@@ -39,7 +39,6 @@ const navLinks = [
     <link rel="apple-touch-icon" href="/apple-touch-icon.svg" />
     <meta name="theme-color" content="#020617" />
 
-    <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Spatialytics" />
     <meta property="og:title" content={title} />
@@ -49,7 +48,6 @@ const navLinks = [
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
 
-    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
@@ -126,15 +124,24 @@ const navLinks = [
           <p class="text-slate-400 text-sm max-w-xs">
             Spatial intelligence, stores, websites, data tools, and software that keep value in Greater Minnesota.
           </p>
+          <p class="text-slate-500 text-xs mt-4 max-w-sm">
+            Product family: place intel → customers & jobs → people on shifts.
+          </p>
         </div>
-        <div class="flex gap-12 text-sm text-slate-400">
+        <div class="flex flex-wrap gap-12 text-sm text-slate-400">
+          <div class="space-y-2">
+            <div class="font-medium text-slate-200">Products</div>
+            <a href="/subscriptions" class="block hover:text-cyan-400 transition">Subscriptions & tools</a>
+            <a href="https://spatialytics-pipeline.vercel.app" target="_blank" rel="noopener" class="block hover:text-cyan-400 transition">Pipeline CRM ↗</a>
+            <a href="https://shiftsprout.vercel.app" target="_blank" rel="noopener" class="block hover:text-cyan-400 transition">ShiftSprout OS ↗</a>
+            <a href="https://github.com/KristineMK72/spatialytics-os" target="_blank" rel="noopener" class="block hover:text-cyan-400 transition">Spatialytics OS ↗</a>
+          </div>
           <div class="space-y-2">
             <div class="font-medium text-slate-200">Solutions</div>
             <a href="/solutions/spatial" class="block hover:text-cyan-400 transition">Spatial Intelligence</a>
             <a href="/solutions/print-pod" class="block hover:text-cyan-400 transition">Print & POD</a>
             <a href="/solutions/business" class="block hover:text-cyan-400 transition">Business Apps</a>
             <a href="/solutions/grant-match" class="block hover:text-cyan-400 transition">Grant Match</a>
-            <a href="/subscriptions" class="block hover:text-cyan-400 transition">Subscriptions</a>
           </div>
           <div class="space-y-2">
             <div class="font-medium text-slate-200">Company</div>
